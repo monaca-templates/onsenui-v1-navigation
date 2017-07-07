@@ -8920,13 +8920,15 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
 
 
 
+
+
 /*** <Start:monaca-core-utils> ***/
 /*** <Start:monaca-core-utils LoadJs:"components/monaca-core-utils/monaca-core-utils.js"> ***/
 /**
  * Monaca Core Utility Library
  * This library requires cordova.js
  *
- * @version 2.0.5
+ * @version 2.0.6
  * @author  Asial Corporation
  */
 window.monaca = window.monaca || {};
@@ -9133,7 +9135,7 @@ window.monaca = window.monaca || {};
                   var head = message.substr(0, 5);
                   if (window.monaca.isDeviceReady !== true || (head != 'ERROR' && head != 'WARN:')) {
                       var xhr = new XMLHttpRequest();
-                      var path = "monaca://log?level=" + encodeURIComponent(level) + "&message=" + encodeURIComponent(message) + "&at=" + (new Date()).getTime();
+                      var path = "https://monaca-debugger.local/log?level=" + encodeURIComponent(level) + "&message=" + encodeURIComponent(message) + "&at=" + (new Date()).getTime();
                       xhr.open("GET", path);
                       xhr.send();
                   }
